@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React Microfrontends</title>
+  <meta name="importmap-type" content="systemjs-importmap" />
+  <!-- <script type="systemjs-importmap" src="https://storage.googleapis.com/react.microfrontends.app/importmap.json"></script> -->
+  <script type="systemjs-importmap">
+    {
+      "imports": {
+        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.3.4/lib/system/single-spa.min.js",
+        "vue": "https://unpkg.com/vue",
+        "react": "https://cdn.jsdelivr.net/npm/react@16.13.1/umd/react.production.min.js",
+        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.production.min.js",
+        "rxjs": "https://cdn.bootcdn.net/ajax/libs/rxjs/7.3.0/rxjs.umd.min.js"
+      }
+    }
+  </script>
+  <script type="systemjs-importmap">
+    {
+      "imports": {
+        "@react-mf/root-config": "//localhost:9000/react-mf-root-config.js",
+        "@react-mf/navbar": "//localhost:9001/react-mf-navbar.js",
+        "@react-mf/people": "//localhost:9002/react-mf-people.js",
+        "@react-mf/planets": "//localhost:9003/react-mf-planets.js",
+        "@react-mf/styleguide": "//localhost:9004/react-mf-styleguide.js",
+        "@react-mf/api": "//localhost:9005/react-mf-api.js",
+        "@react-mf/cars": "//localhost:9006/react-mf-cars.js"
+      }
+    }
+  </script>
+  
+  <!-- <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs/dist/extras/named-exports.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/import-map-overrides/dist/import-map-overrides.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs/dist/system.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs/dist/extras/amd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs/dist/extras/named-exports.js"></script>
+  
+  <!-- <template id="single-spa-layout">
+    <single-spa-router>
+      <nav class="topnav">
+        <application name="@react-mf/navbar" loader="topNav" error="topNav"></application>
+      </nav>
+      <div class="main-content mt-16">
+        <route path="people">
+          <application name="@react-mf/people"></application>
+        </route>
+        <route path="planets">
+          <application name="@react-mf/planets"></application>
+        </route>
+        <redirect from="/earth" to="/planets"></redirect>
+        <route default>
+          <h1 class="flex flex-row justify-center p-16">
+            <p class="max-w-md">This example project shows independently built and deployed microfrontends that use React and single-spa. Each nav link above takes you to a different microfrontend.</p>
+          </h1>
+        </route>
+      </div>
+    </single-spa-router>
+  </template> -->
+</head>
+<body>
+  <script>
+    System.import('@react-mf/root-config');
+    System.import('@react-mf/styleguide');
+  </script>
+  <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
+</body>
+</html>

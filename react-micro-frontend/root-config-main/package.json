@@ -1,0 +1,42 @@
+{
+  "scripts": {
+    "start": "webpack-dev-server --mode=development --port 9000 --env isLocal",
+    "lint": "eslint src",
+    "test": "jest --passWithNoTests",
+    "format": "prettier --write .",
+    "build": "webpack --mode=production",
+    "analyze": "webpack --env analyze",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/helper-wrap-function": "^7.16.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.16.5",
+    "@types/systemjs": "^6.1.1",
+    "babel-loader": "^8.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-important-stuff": "^1.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.1",
+    "html-webpack-plugin": "^5.3.2",
+    "husky": "^7.0.0",
+    "jest": "^27.0.6",
+    "jest-cli": "^27.0.6",
+    "prettier": "^2.3.2",
+    "pretty-quick": "^3.1.1",
+    "rxjs": "^7.4.0",
+    "serve": "^12.0.0",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-config-single-spa": "^5.0.0",
+    "webpack-dev-server": "^4.0.0",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "single-spa": "^5.9.3",
+    "single-spa-layout": "^1.6.0",
+    "single-spa-react": "^4.6.0"
+  }
+}
